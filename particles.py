@@ -6,10 +6,10 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from random import random 
+import random as rnd 
 
-def rand(rmin=0.0, rmax=1.0):
-    return (rmax-rmin)*random() + rmin
+def random(rmin=0.0, rmax=1.0):
+    return (rmax-rmin)*rnd.random() + rmin
 
 class Particle:
     def __init__(self, x, y, trace = True):
@@ -72,11 +72,11 @@ t = 0
 tmax = 100
 dt = 0.1
 while (t <= tmax):
-    a.move( t/10*np.cos(t), t/10*np.sin(t) )
-    b.move( t/5-10, t/5-10 )
-    c.move( rand(-10, 10), rand(-10, 10) )
-    d.move( rand(-10, 10), rand(-10, 10) )
-    e.move( rand(-10, 10), rand(-10, 10) )
+    a.move(t/10*np.cos(t), t/10*np.sin(t) )
+    b.move(t/5-10, t/5-10 )
+    c.move(random(-10, 10), random(-10, 10))
+    d.move(random(-10, 10), random(-10, 10))
+    e.move(random(-10, 10), random(-10, 10))
     canvas.update(t)
     t += dt
 
